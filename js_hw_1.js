@@ -124,9 +124,11 @@ checkAge2("random text");
 // 3*. Преобразовать 2* таким образом, чтобы значение '2' (строка в которой лежит ТОЛЬКО ЦИФРА) пропускалось, преобразовываясь в number.
 
 const checkAge3 = function(age) {
+
     age = Number(age)
+    
         if (age < age_2) {
-            console.log(`You don’t have access cause your age is ${age_1}. It’s less then ${age_2}`);
+            console.log(`You don’t have access cause your age is ${age}. It’s less then ${age_2}`);
         } else if (age < age_3) {
             console.log("Welcome  !")
         } else if (age > age_3) {
@@ -138,7 +140,8 @@ const checkAge3 = function(age) {
 
 console.log("Задание 3*");
 checkAge3("2");
+checkAge3("22qq");
 checkAge3(17);
 checkAge3(18);
 checkAge3(61);
-checkAge2("random text");
+checkAge3("random text");
