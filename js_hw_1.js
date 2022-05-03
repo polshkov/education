@@ -43,8 +43,7 @@ let item_5 = item_3;
 
 let item_6 = 15;
 let item_6_type = typeof(item_6);
-console.log("item_6 == " + item_6);
-console.log("item_6_type == " + item_6_type);
+console.log("item_6 == " + item_6 + ", item_6_type == " + item_6_type);
 
 // 22. Создать переменную item_7 и в ней преобразовать item_6 в String.
 // 23. Создать переменную item_7_type
@@ -53,8 +52,7 @@ console.log("item_6_type == " + item_6_type);
 
 let item_7 = String(item_6);
 let item_7_type = typeof(item_7);
-console.log("item_7 == " + item_7);
-console.log("item_7_type == " + item_7_type);
+console.log("item_7 == " + item_7 + ", item_7_type == " + item_7_type);
 
 // 26. Создать переменную “age_1” и присвоить ей значение 10
 // 27. Создать переменную “age_2” и присвоить ей значение 18
@@ -71,7 +69,7 @@ let age_3 = 60;
 
 if (typeof(age_1) == 'number'){
     if (age_1 < age_2){
-        console.log(`You don’t have access cause your age is ${age_1} It’s less then`)
+        console.log(`You don’t have access cause your age is ${age_1}. It’s less then ${age_2}`)
     } else if (age_1 < age_3){
         console.log("Welcome  !")
     } else {
@@ -89,7 +87,7 @@ if (typeof(age_1) == 'number'){
 
 const checkAge = function(age) {
     if (age < age_2) {
-        console.log(`You don’t have access cause your age is ${age} It’s less then`);
+        console.log(`You don’t have access cause your age is ${age}. It’s less then ${age_2}`);
     } else if (age < age_3) {
         console.log("Welcome  !")
     } else {
@@ -107,7 +105,7 @@ checkAge(61);
 const checkAge2 = function(age) {
     if (typeof(age) == 'number'){
         if (age < age_2) {
-            console.log(`You don’t have access cause your age is ${age} It’s less then`);
+            console.log(`You don’t have access cause your age is ${age}. It’s less then ${age_2}`);
         } else if (age < age_3) {
             console.log("Welcome  !")
         } else {
@@ -121,26 +119,26 @@ console.log("Задание 2*");
 checkAge2(17);
 checkAge2(18);
 checkAge2(61);
-checkAge2("not number");
+checkAge2("random text");
 
 // 3*. Преобразовать 2* таким образом, чтобы значение '2' (строка в которой лежит ТОЛЬКО ЦИФРА) пропускалось, преобразовываясь в number.
 
 const checkAge3 = function(age) {
-    if (typeof(age) == 'number'){
-        if (age === 2) {
-            console.log("number")
-        }
-        else if (age < age_2) {
-            console.log(`You don’t have access cause your age is ${age_1} It’s less then`);
+    age = Number(age)
+        if (age < age_2) {
+            console.log(`You don’t have access cause your age is ${age_1}. It’s less then ${age_2}`);
         } else if (age < age_3) {
             console.log("Welcome  !")
-        } else {
+        } else if (age > age_3) {
             console.log("Keep calm and look Culture channel")
-        }
-    } else {
+        } else {
         console.log("Technical work")
     }
 }
 
 console.log("Задание 3*");
-checkAge3(2);
+checkAge3("2");
+checkAge3(17);
+checkAge3(18);
+checkAge3(61);
+checkAge2("random text");
