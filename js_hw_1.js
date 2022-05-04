@@ -67,14 +67,12 @@ let age_1 = 10;
 let age_2 = 18;
 let age_3 = 60;
 
-if (typeof(age_1) == 'number'){
-    if (age_1 < age_2){
-        console.log(`You don’t have access cause your age is ${age_1}. It’s less then ${age_2}`)
-    } else if (age_1 < age_3){
-        console.log("Welcome  !")
-    } else {
-        console.log("Keep calm and look Culture channel")
-    }
+if (age_1 < age_2) {
+    console.log(`You don’t have access cause your age is ${age_1}. It’s less then ${age_2}.`);
+} else if (age_1 < age_3) {
+    console.log("Welcome  !")
+} else if (age_1 > age_3) {
+    console.log("Keep calm and look Culture channel")
 } else {
     console.log("Technical work")
 }
@@ -87,11 +85,13 @@ if (typeof(age_1) == 'number'){
 
 const checkAge = function(age) {
     if (age < age_2) {
-        console.log(`You don’t have access cause your age is ${age}. It’s less then ${age_2}`);
-    } else if (age < age_3) {
+        console.log(`You don’t have access cause your age is ${age}. It’s less then ${age_2}.`);
+    } else if (age >= age_2 && age <= age_3) {
         console.log("Welcome  !")
-    } else {
+    } else if (age > age_3) {
         console.log("Keep calm and look Culture channel")
+    } else {
+        console.log("Technical work")
     }
 }
 
@@ -105,8 +105,8 @@ checkAge(61);
 const checkAge2 = function(age) {
     if (typeof(age) == 'number'){
         if (age < age_2) {
-            console.log(`You don’t have access cause your age is ${age}. It’s less then ${age_2}`);
-        } else if (age < age_3) {
+            console.log(`You don’t have access cause your age is ${age}. It’s less then ${age_2}.`);
+        } else if (age >= age_2 && age <= age_3) {
             console.log("Welcome  !")
         } else {
             console.log("Keep calm and look Culture channel")
@@ -116,20 +116,21 @@ const checkAge2 = function(age) {
     }
 }
 console.log("Задание 2*");
+checkAge2("не Number");
 checkAge2(17);
 checkAge2(18);
 checkAge2(61);
-checkAge2("random text");
 
 // 3*. Преобразовать 2* таким образом, чтобы значение '2' (строка в которой лежит ТОЛЬКО ЦИФРА) пропускалось, преобразовываясь в number.
 
 const checkAge3 = function(age) {
 
     age = Number(age)
+    //age = !isNaN(age)
     
         if (age < age_2) {
-            console.log(`You don’t have access cause your age is ${age}. It’s less then ${age_2}`);
-        } else if (age < age_3) {
+            console.log(`You don’t have access cause your age is ${age}. It’s less then ${age_2}.`);
+        } else if (age >= age_2 && age <= age_3) {
             console.log("Welcome  !")
         } else if (age > age_3) {
             console.log("Keep calm and look Culture channel")
@@ -140,8 +141,12 @@ const checkAge3 = function(age) {
 
 console.log("Задание 3*");
 checkAge3("2");
-checkAge3("22qq");
+checkAge3("не Number");
 checkAge3(17);
 checkAge3(18);
 checkAge3(61);
-checkAge3("random text");
+
+// 4***. Преобразовать задание 3* таким образом, чтобы возраст вводится используя функцию prompt в привязанной верстке.
+
+let agePrompt = prompt('Возраст?', '')
+checkAge3(agePrompt)
