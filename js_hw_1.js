@@ -141,12 +141,12 @@ const checkAge3 = function(age) {
 
 console.log("Задание 3*");
 checkAge3("2");
-checkAge3("не Number");
+checkAge3("22, не Number");
 checkAge3(17);
 checkAge3(18);
 checkAge3(61);
 
 // 4***. Преобразовать задание 3* таким образом, чтобы возраст вводится используя функцию prompt в привязанной верстке.
 
-let agePrompt = prompt('Возраст?', '')
-checkAge3(agePrompt)
+// let agePrompt = prompt('Возраст?', '')
+// checkAge3(agePrompt)
