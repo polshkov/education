@@ -59,9 +59,28 @@ let names = [ 'Kate',
               'Roberto',
               'Igor',
               'Pam',
-              'Andrew']
+              'Andrew',
+              'Tolik']
 
 for (it_1 of names){
+
+    if (it_1 == 'Pam') {
+        break;
+    }
+
     console.log(it_1)
+}
+
+for (let it_1 in names){
+    if (it_1 % 2 == 0) {
+    console.log(names[it_1], it_1, 2)
+    }
+}
+
+let it_2 = names.length
+let count = 0
+while (count < it_2) {
+    console.log(names[count])
+    count++
 }
 //////
