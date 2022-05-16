@@ -64,14 +64,8 @@ const getWordStructure2 = function(word){
     const consonant_list = ["b", "c", "d", "f", "g", "h", "j", "k", 
     "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"];
     for (let char of word.toLowerCase()){
-        if (vowels_list.includes(char)){
-            vowel++;
-        } 
-    }
-    for (let char2 of word.toLowerCase()){
-        if (consonant_list.includes(char2)){
-            consonant++;
-        } 
+        if (vowels_list.includes(char)) vowel++;
+        if (consonant_list.includes(char)) consonant++;
     }
     console.log('Слово', word, 'состоит из', vowel,'гласных и', consonant, 'согласных букв')    
 }
