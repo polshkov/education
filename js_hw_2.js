@@ -63,22 +63,71 @@ const getWordStructure = function(word){
     let consonant = word.match(/[бвгджзйклмнпрстфхцчшщBCDFGHJKLMNPQRSTVWXYZ]/igm).length;
     console.log('Слово', word, 'состоит из', vowel,'гласных и', consonant, 'согласных букв')    
 }
+console.log('Задание 3**')
 getWordStructure('case')
 getWordStructure('Case')
 getWordStructure('Check-list')
+getWordStructure("A man, a plan.");
+
+// Задание 3**. Вариант решения №2
+const getWordStructure2 = function(word){
+    let vowel = 0;
+    const vowels_list = ["a", "u", "e", "o", "i"];
+    for (let char of word.toLowerCase()){
+        if (vowels_list.includes(char)){
+            vowel++;
+        } 
+    }
+
+    let consonant = 0;
+    const consonant_list = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"];
+    for (let char of word.toLowerCase()){
+        if (consonant_list.includes(char)){
+            consonant++;
+        } 
+    }
+    console.log('Слово', word, 'состоит из', vowel,'гласных и', consonant, 'согласных букв')    
+}
+console.log('Задание 3**. Вариант решения №2')
+getWordStructure2('case')
+getWordStructure2('Case')
+getWordStructure2('Check-list')
+getWordStructure2("A man, a plan.");
 
 // 4**. Написать функцию, которая проверяет, является ли слово палиндромом
 // e.g. function isPalindrom(word)
 // Проверки: 'abba', 'Abba'
 const isPalindrom = function(word){
-    let checkingPalindrome = word.toLowerCase().split('').reverse().join('');
-    if (checkingPalindrome === word.toLowerCase()){
-        console.log('Слово', word,'является палиндромом')
+    let LCword = word.toLowerCase().replace(/[^A-Za-z0-9]/g, '');
+    let checkPali = LCword.split('').reverse().join('');
+    if (checkPali === LCword){
+        console.log('Слово', word,'является палиндромом');
     } else {
-        console.log('Слово', word,'не является палиндромом')    
+        console.log('Слово', word,'не является палиндромом');   
     }
     
 }
-isPalindrom('abba')
-isPalindrom('Abba')
-isPalindrom('Abbacd')
+console.log('Задание 4**')
+isPalindrom('abba');
+isPalindrom('Ab11ba');
+isPalindrom("A man, a plan, a canal. Panama");
+isPalindrom('Abbacd');
+
+// Задание 4**. Вариант решения №2
+function palindrome(word) {  
+    let a= word.toLowerCase().replace(/[^A-Za-z0-9]/g, '');  
+    let b = "";  
+    for (i = a.length-1; i >= 0; i--) {  
+        b = b + a[i]  
+    }  
+    if (a == b){
+        console.log('Слово', word,'является палиндромом');  
+    } else  {
+        console.log('Слово', word,'не является палиндромом');  
+    }
+}  
+console.log('Задание 4**. Вариант решения №2')
+palindrome('abba');
+palindrome('Ab11ba');
+palindrome("A man, a plan, a canal. Panama");
+palindrome('Abbacd');
