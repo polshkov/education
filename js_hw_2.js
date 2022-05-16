@@ -1,7 +1,8 @@
 // 1. Написать скриптик, который сосчитает и выведет результат от возведения 2 в степень 10, начиная со степени 1
 let i = 1
 while(i <= 10){
-    console.log(Math.pow(2,i))
+    console.log(2**i)
+    // console.log(Math.pow(2,i))
     i++
 }
 
@@ -32,8 +33,9 @@ for (item_1 = 1; item_1 <= 5; item_1++){
 let result2 = ''
 const printSmile = function(stroka, numberOfRows){
     for (it_1 = 1; it_1 <= numberOfRows; it_1++){
-        result2+=stroka
-        console.log(result2)
+        // result2+=stroka
+        // console.log(result2)
+        console.log(stroka.repeat(it_1))
     }
 }
 printSmile('+-', 7)
@@ -44,21 +46,6 @@ printSmile('+-', 7)
 // Слово (word) состоит из  (число) гласных и (число) согласных букв
 // Проверки: 'case', 'Case', 'Check-list'
 const getWordStructure = function(word){
-    // let vowel = 0;
-    // const vowels_list = ["a", "u", "e", "o", "i"];
-    // for (let char of word.toLowerCase()){
-    //     if (vowels_list.includes(char)){
-    //         vowel++;
-    //     } 
-    // }
-
-    // let consonant = 0;
-    // const consonant_list = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"];
-    // for (let char of word.toLowerCase()){
-    //     if (consonant_list.includes(char)){
-    //         consonant++;
-    //     } 
-    // }
     let vowel = word.match(/[ауоыиэяюёеAUEOI]/igm).length;
     let consonant = word.match(/[бвгджзйклмнпрстфхцчшщBCDFGHJKLMNPQRSTVWXYZ]/igm).length;
     console.log('Слово', word, 'состоит из', vowel,'гласных и', consonant, 'согласных букв')    
@@ -72,17 +59,17 @@ getWordStructure("A man, a plan.");
 // Задание 3**. Вариант решения №2
 const getWordStructure2 = function(word){
     let vowel = 0;
-    const vowels_list = ["a", "u", "e", "o", "i"];
+    let consonant = 0;
+    const vowels_list = ["a", "u", "e", "o", "i"];    
+    const consonant_list = ["b", "c", "d", "f", "g", "h", "j", "k", 
+    "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"];
     for (let char of word.toLowerCase()){
         if (vowels_list.includes(char)){
             vowel++;
         } 
     }
-
-    let consonant = 0;
-    const consonant_list = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"];
-    for (let char of word.toLowerCase()){
-        if (consonant_list.includes(char)){
+    for (let char2 of word.toLowerCase()){
+        if (consonant_list.includes(char2)){
             consonant++;
         } 
     }
