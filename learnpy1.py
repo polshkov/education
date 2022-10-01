@@ -2,12 +2,12 @@
 text = "Slava Ukraini"
 name = "Oleg"
 
-# float (Вещеественное, действи́тельное число, обладающее дробной частью)
-fnumb = 5.7
+# float (Вещественное, действительное число, обладающее дробной частью)
+numb = 5.7
 # int (integer, целочисленное, целое число)
-numb = 6
+numb2 = 6
 age = 22
-# bool (булевое значение) только True, False
+# bool (булево значение) только True, False
 status = True
 
 # функция(команда) принимает аргументы
@@ -24,7 +24,7 @@ print('\nHello\nWorld\n')
 print('Hello, my name is ' + name + '!')
 print("I'm " + str(age) + " years old.")
 
-### Запрос данных от пользователя input
+# Запрос данных от пользователя input
 '''
 name = input('Your name: ')
 age = input('Your ag: ')
@@ -35,29 +35,29 @@ print('Hi, ' + name + '!\nYou are already ' + age + ' years old.')
 a = 4
 b = 2
 c = b ** a
-print ("**: " + str(c))
+print("**: " + str(c))
 
 # % - деление по модулю (остаток от деления), // - целочисленное деление (частное)
 a = 10
 b = 3
 c = a % b
-print ("%: " + str(c))
+print("%: " + str(c))
 c = a // b
-print ("//: " + str(c))
+print("//: " + str(c))
 
 # Списки
 names = ["Igor", "Olga", "Kate"]
-print(names[len(names)-1]) # Выводит последний элемент списка, [0] - выводит первый
+print(names[len(names)-1])  # Выводит последний элемент списка, [0] - выводит первый
 print(str(len(names)) + " Names: " + ', '.join(names))
 
 # циклы
 x = 1
 while x <= 10:
-  if x%2 == 0: # делит на четные (even) и нечетные (odd) числа
-    print(str(x) + " is even")
-  else:
-    print(str(x) + " is odd")
-  x += 1
+    if x % 2 == 0:  # делит на четные (even) и нечетные (odd) числа
+        print(str(x) + " is even")
+    else:
+        print(str(x) + " is odd")
+        x += 1
 
 '''You are making a ticketing system.
 The price of a single ticket is $100.
@@ -86,7 +86,7 @@ print(total)
 
 i = ["hello", "world", "spam", "eggs"]
 for y in i[3:]:
-  print(y + "!")
+    print(y + "!")
 
 # Поменять буквы в словах (o -> u, l -> y) с помощью цикла for
 i = "Hello world"
@@ -116,8 +116,8 @@ print(fin)
 
 # Поменять буквы в словах (o -> u, l -> y) с помощью replace
 i = "Hello world"
-a = i.replace("l","y")
-y= a.replace("o","u")
+a = i.replace("l", "y")
+y = a.replace("o", "u")
 print(y)
 
 '''BMI Calculator
@@ -130,7 +130,8 @@ Normal = more or equal to 18.5 and less than 25
 Overweight = more or equal to 25 and less than 30
 Obesity = 30 or more
 
-Let’s make finding out your BMI quicker and easier, by creating a program that takes a person's weight and height as input and outputs the corresponding BMI category.
+Let’s make finding out your BMI quicker and easier, by creating a program that takes a person's weight and
+height as input and outputs the corresponding BMI category.
 
 Sample Input
 85
@@ -153,7 +154,60 @@ else:
 
 # округление
 x = 5.65
-print(round(x)) # стандартное округление
-import math # Импортируем библиотеку
-print(math.ceil(x)) # округление в большую сторону
-print(math.floor(x)) # округление в меньшую сторону
+print(round(x))  # стандартное округление
+import math  # Импортируем библиотеку
+print(math.ceil(x))  # округление в большую сторону
+print(math.floor(x))  # округление в меньшую сторону
+
+N = 10
+res = list(range(0, N+1))
+print(sum(res))
+
+# Есть список a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89].
+# Выведите все элементы, которые меньше 5.
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+for i in a:
+    if i < 5:
+        print(i)
+
+# Есть список a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89].
+# Выведите все элементы одним списком, которые меньше 5.
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+b = ''
+for i in a:
+    if i < 5:
+        b += str(i)
+    else:
+        continue
+print(list(b))
+print([elem for elem in a if elem < 5])
+
+# Нужно вернуть список, который состоит из элементов, общих для этих двух списков.
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+q = []
+for i in a:
+    for t in b:
+        if i == t:
+            q += [i]
+print(q)  # вариант решения №1
+for i in a:
+    if i in b:
+        q += [i]
+print(q)  # вариант решения №2
+print([elem for elem in a for elem in b])  # вариант решения №3
+
+# Выведите первый и последний элемент списка.
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+print([a[0]] + [a[-1]])
+print(f'Первый: {a[0]}; последний: {a[-1]}')
+
+# The append() function is used to add an item to the end of the list:
+a = [1, 1, 2, 3]
+a.append(4)
+a += [6]
+print(a)
+
+# index() finds the first occurrence of a list item and returns its index.
+nums = [9, 8, 7, 6, 5]
+print(nums.index(5))
