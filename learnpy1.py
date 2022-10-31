@@ -56,9 +56,36 @@ fruits = ["apple", "banana", "cherry", "cherry"]
 x = fruits.count("cherry")
 print(x)  # 2
 
+l = [1, 2, 3, 4, 5, 6]
+del l[3]
+l[1:4] = ['kkk', 9]
+print(l)  # [1, 'kkk', 9, 6]
+
 points = [1, 4, 2, 9, 7, 8, 9, 3, 9]
 x = points.count(9)
 print(x)  # 3
+
+""" zip()
+The zip() function returns a zip object, which is an iterator of tuples
+where the first item in each passed iterator is paired together,
+and then the second item in each passed iterator are paired together etc. """
+l1 = [1,2,3]
+l2 = [4, 5, 6]
+l = []
+for x, y in zip(l1, l2):
+    l += [(x, y)]
+print(dict(l))  # {1: 4, 2: 5, 3: 6}
+print(dict(list((x, y) for x, y in zip(l1, l2))))
+
+# Tuple Unpacking
+numbers = (1, 2, 3)
+a, b, c = numbers
+print(b)  # 2
+a, b, *c, d = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(c)  # [3, 4, 5, 6, 7, 8]
+
+# Set() Множества https://python-scripts.com/sets
+
 
 # циклы
 x = 1
@@ -242,6 +269,7 @@ data = {}
 for i in bigList:
     data[i] = i
 print(data)
+
 print({i: i for i in bigList})
 print(dict((i, i) for i in bigList))
 
@@ -275,4 +303,20 @@ m = {'user_id':'uid', 'group_id':'gid', 'group_name':'group'}
 print(dict((m.get(k, k), v) for (k, v) in d.items()))
 # {'uid': 1, 'user': 'user1', 'gid': 3, 'group': 'ordinary users'}
 
+def square(x):
+    print('Квадрат числа', x, '=', x**2)
+for i in range(11):
+    square(i)
 
+
+#  *args (arguments) позиционные аргументы
+#  **kwargs (keyword arguments) именованные аргументы
+'''
+Оператор * позволяет «распаковывать» объекты, внутри которых хранятся некие элементы. Вот пример:
+
+a = [1,2,3]
+b = [*a,4,5,6]
+print(b) # [1,2,3,4,5,6]
+
+Тут берётся содержимое списка a, распаковывается, и помещается в список b.
+'''
